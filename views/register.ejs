@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="card">
+        <h2>Register</h2>
+        <h3>Fill out this form</h3>
+        <form action="/register" class="login-form" method="POST">
+            <div>
+                <label for="name">Username:</label>
+                <input type="text" id="name" name="name" class="control" placeholder="Type your username" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="control" placeholder="Type your email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <div class="password">
+                    <input type="password" id="password" name="password" class="control"
+                        placeholder="Type your password" required>
+                    <button class="toggle" type="button" onclick="togglePassword(this)">
+                    </button>
+                </div>
+            </div>
+            <button class="control" type="submit">REGISTER</button>
+        </form>
+        <a href="/login">Login</a>
+    </div>
+    <script type="text/javascript" src="/scripts/script.js"></script>
+
+</body>
+
+</html>
