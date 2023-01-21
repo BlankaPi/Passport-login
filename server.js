@@ -36,7 +36,7 @@ app.use(session({
     store: new MemoryStore({
         checkPeriod: 86400000
     }),
-    secret: process.env.SESSION_SECRET,
+    secret: "secret",
     resave: false,
     saveUninitialized: false
 }));
