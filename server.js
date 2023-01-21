@@ -10,6 +10,7 @@ const passport = require("passport");
 const initializePassport = require("./passport-config");
 const flash = require("express-flash");
 const session = require("express-session");
+const MemoryStore = require("memorystore")(session);
 const methodOverride = require("method-override");
 
 initializePassport(passport,
@@ -31,6 +32,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(session({
+    cookie: { maxAge: 86400000},
+    store: new MemoryStore({
+        checkPeriod: 86400000
+    }),
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
